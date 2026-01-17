@@ -125,3 +125,200 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>MOODAY | 공식 쇼핑몰</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  background: #f5f5f5;
+}
+
+/* 헤더 */
+header {
+  background: #111;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 검색 */
+.search-box {
+  padding: 12px;
+  background: #fff;
+}
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 상품 영역 */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product h3 {
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* 장바구니 */
+.cart {
+  background: #fff;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.cart h2 {
+  font-size: 16px;
+}
+
+.cart-item {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 결제 */
+.pay {
+  margin-top: 10px;
+}
+.pay a {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 8px;
+  color: #fff;
+  text-decoration: none;
+}
+.kakao { background: #fee500; color:#000; }
+.naver { background: #03c75a; }
+.toss { background: #0064ff; }
+
+/* 하단 메뉴 */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.bottom div {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>MOODAY</header>
+
+<div class="search-box">
+  <input type="text" placeholder="상품 검색 (예: 후드티)">
+</div>
+
+<div class="products">
+  <div class="product">
+    <img src="https://picsum.photos/300/300?1">
+    <h3>MOODAY 후드티</h3>
+    <div class="price">39,000원</div>
+    <button onclick="addCart('MOODAY 후드티',39000)">장바구니 담기</button>
+  </div>
+
+  <div class="product">
+    <img src="https://picsum.photos/300/300?2">
+    <h3>MOODAY 맨투맨</h3>
+    <div class="price">35,000원</div>
+    <button onclick="addCart('MOODAY 맨투맨',35000)">장바구니 담기</button>
+  </div>
+
+  <div class="product">
+    <img src="https://picsum.photos/300/300?3">
+    <h3>MOODAY 캡모자</h3>
+    <div class="price">19,000원</div>
+    <button onclick="addCart('MOODAY 캡모자',19000)">장바구니 담기</button>
+  </div>
+</div>
+
+<div class="cart">
+  <h2>🛒 장바구니</h2>
+  <div id="cartItems"></div>
+  <div class="total">총 금액: <span id="total">0</span>원</div>
+
+  <div class="pay">
+    <a class="kakao" href="#">카카오페이 결제</a>
+    <a class="naver" href="#">네이버페이 결제</a>
+    <a class="toss" href="#">토스 결제</a>
+  </div>
+</div>
+
+<div class="bottom">
+  <div>홈</div>
+  <div>상품</div>
+  <div>장바구니</div>
+  <div>문의</div>
+</div>
+
+<script>
+let total = 0;
+function addCart(name, price) {
+  const div = document.createElement("div");
+  div.className = "cart-item";
+  div.innerText = name + " - " + price.toLocaleString() + "원";
+  document.getElementById("cartItems").appendChild(div);
+  total += price;
+  document.getElementById("total").innerText = total.toLocaleString();
+}
+</script>
+
+</body>
+</html>
