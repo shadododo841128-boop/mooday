@@ -1,184 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>MOODAY | 공식 쇼핑몰</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
-      background: #f5f5f5;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 16px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .banner {
-      background: linear-gradient(135deg, #000, #333);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .banner h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .banner p {
-      margin-top: 10px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    .products {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 16px;
-    }
-    .product {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .product img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .product .info {
-      padding: 12px;
-    }
-    .product h3 {
-      margin: 0;
-      font-size: 15px;
-    }
-    .price {
-      margin-top: 6px;
-      font-weight: bold;
-      color: #e60023;
-    }
-    .buy {
-      margin-top: 10px;
-      display: block;
-      text-align: center;
-      padding: 10px;
-      background: #000;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-
-<header>MOODAY</header>
-
-<section class="banner">
-  <h1>MOODAY 공식 스토어</h1>
-  <p>감성 · 트렌드 · 데일리 쇼핑</p>
-</section>
-
-<section class="products">
-  <div class="product">
-    <img src="https://picsum.photos/400/400?1">
-    <div class="info">
-      <h3>오프화이트 후드</h3>
-      <div class="price">₩59,000</div>
-      <a class="buy" href="#">구매하기</a>
-    </div>
-  </div>
-
-  <div class="product">
-    <img src="https://picsum.photos/400/400?2">
-    <div class="info">
-      <h3>데일리 스니커즈</h3>
-      <div class="price">₩79,000</div>
-      <a class="buy" href="#">구매하기</a>
-    </div>
-  </div>
-
-  <div class="product">
-    <img src="https://picsum.photos/400/400?3">
-    <div class="info">
-      <h3>미니 크로스백</h3>
-      <div class="price">₩39,000</div>
-      <a class="buy" href="#">구매하기</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 MOODAY. All rights reserved.
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
 <meta charset="UTF-8">
 <title>MOODAY | 공식 쇼핑몰</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
-  background: #f5f5f5;
+  background: #f6f6f6;
+  color: #111;
 }
 
 /* 헤더 */
 header {
+  position: sticky;
+  top: 0;
   background: #111;
   color: #fff;
-  padding: 16px;
+  padding: 14px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 100;
 }
 
-/* 검색 */
-.search-box {
-  padding: 12px;
-  background: #fff;
+/* 메인 배너 */
+.banner {
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  padding: 48px 20px;
+  text-align: center;
 }
-.search-box input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.banner h1 {
+  margin: 0;
+  font-size: 26px;
+}
+.banner p {
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* 카테고리 */
+.category {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 12px 0;
+}
+.category div {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 /* 상품 영역 */
 .products {
+  padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 12px;
+  gap: 14px;
 }
 
 .product {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .product img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .product h3 {
@@ -187,26 +81,26 @@ header {
 }
 
 .price {
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
-button {
+.product button {
   width: 100%;
   padding: 10px;
-  border: none;
-  border-radius: 8px;
   background: #111;
   color: #fff;
-  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
 }
 
 /* 장바구니 */
 .cart {
   background: #fff;
-  margin: 12px;
-  padding: 12px;
-  border-radius: 12px;
+  margin: 16px;
+  padding: 14px;
+  border-radius: 14px;
 }
 
 .cart h2 {
@@ -219,41 +113,32 @@ button {
 }
 
 .total {
-  font-weight: bold;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 /* 결제 */
-.pay {
-  margin-top: 10px;
-}
 .pay a {
   display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 10px;
   margin-top: 8px;
-  color: #fff;
-  text-decoration: none;
-}
-.kakao { background: #fee500; color:#000; }
-.naver { background: #03c75a; }
-.toss { background: #0064ff; }
-
-/* 하단 메뉴 */
-.bottom {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  display: flex;
-  border-top: 1px solid #ddd;
-}
-.bottom div {
-  flex: 1;
+  padding: 12px;
   text-align: center;
-  padding: 10px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.kakao { background:#fee500; color:#000; }
+.naver { background:#03c75a; color:#fff; }
+.toss { background:#0064ff; color:#fff; }
+
+/* 푸터 */
+footer {
+  margin-top: 40px;
+  padding: 20px;
   font-size: 12px;
+  text-align: center;
+  color: #777;
 }
 </style>
 </head>
@@ -262,34 +147,49 @@ button {
 
 <header>MOODAY</header>
 
-<div class="search-box">
-  <input type="text" placeholder="상품 검색 (예: 후드티)">
-</div>
+<section class="banner">
+  <h1>MOODAY 공식 스토어</h1>
+  <p>매일 입기 좋은 데일리웨어</p>
+</section>
 
-<div class="products">
+<section class="category">
+  <div>상의</div>
+  <div>하의</div>
+  <div>아우터</div>
+  <div>잡화</div>
+</section>
+
+<section class="products">
   <div class="product">
     <img src="https://picsum.photos/300/300?1">
     <h3>MOODAY 후드티</h3>
     <div class="price">39,000원</div>
-    <button onclick="addCart('MOODAY 후드티',39000)">장바구니 담기</button>
+    <button onclick="addCart('후드티',39000)">장바구니</button>
   </div>
 
   <div class="product">
     <img src="https://picsum.photos/300/300?2">
     <h3>MOODAY 맨투맨</h3>
     <div class="price">35,000원</div>
-    <button onclick="addCart('MOODAY 맨투맨',35000)">장바구니 담기</button>
+    <button onclick="addCart('맨투맨',35000)">장바구니</button>
   </div>
 
   <div class="product">
     <img src="https://picsum.photos/300/300?3">
     <h3>MOODAY 캡모자</h3>
     <div class="price">19,000원</div>
-    <button onclick="addCart('MOODAY 캡모자',19000)">장바구니 담기</button>
+    <button onclick="addCart('캡모자',19000)">장바구니</button>
   </div>
-</div>
 
-<div class="cart">
+  <div class="product">
+    <img src="https://picsum.photos/300/300?4">
+    <h3>MOODAY 슬랙스</h3>
+    <div class="price">49,000원</div>
+    <button onclick="addCart('슬랙스',49000)">장바구니</button>
+  </div>
+</section>
+
+<section class="cart">
   <h2>🛒 장바구니</h2>
   <div id="cartItems"></div>
   <div class="total">총 금액: <span id="total">0</span>원</div>
@@ -299,14 +199,12 @@ button {
     <a class="naver" href="#">네이버페이 결제</a>
     <a class="toss" href="#">토스 결제</a>
   </div>
-</div>
+</section>
 
-<div class="bottom">
-  <div>홈</div>
-  <div>상품</div>
-  <div>장바구니</div>
-  <div>문의</div>
-</div>
+<footer>
+  상호: MOODAY | 고객문의: 카카오톡 채널<br>
+  © 2026 MOODAY. All rights reserved.
+</footer>
 
 <script>
 let total = 0;
